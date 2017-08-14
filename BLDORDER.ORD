@@ -1,0 +1,61 @@
+$^                   Test default build order
+$^
+$^  {METADATA START}
+$^  PARTNAME=BLDORDER
+$^  CLASS=ORDER
+$^  {METADATA END}
+$^
+&        SKIP  NOGLOBAL,GLOBAL.NE.SET
+&        SET   U,SMODPFX=BE=G,FUNCTION=HBLD123=G
+&        SET   U,FID=HBLD123=G
+&        SET   U,RELCOOR=BLDVMB.SKAGGS,TIME=5=G
+&        SKIP  1,BUILDID.ND.
+&        SET   U,LSTCOPY='&FAMHLQ..&REL..&DRIVER..LISTINGS'=G
+$^
+&        SET   U,MAXBTYPE=2=G,
+&              BTC1=STD=G,
+&              BTC2=FINAL=G,
+&              BPC1=C-MACRO=G,
+&              BPC2=C-*=G,
+&              BPC3=CPYRT=G,
+&              BFG1=YNNN4=G,
+&              BFG2=XXXY8=G
+&        SET   BLDTYPE=&BTC1=G
+&        SKIP  2,BLDTYPE.NE.STD
+&        SET   U,MAXPHASE=2=G
+&  DATAC EXIT  &#NAME
+&        SKIP  2,BLDTYPE.NE.FINAL
+&        SET   U,MAXPHASE=3=G
+&        ENDSK NOGLOBAL
+$^
+&        SKIP  NOUS,LOCAL.NE.UNSET
+&  @UNSETL
+&  DATAC EXIT  &#NAME
+&        ENDSK NOUS
+$^
+&        SKIP  1,LOCAL.EQ.SET
+&  DATAC EXIT  &#NAME
+$^
+$^  Set default SCODE and DISTTYPE for various classes
+$^
+&        SKIP  NOS,DISTTYPE.DF.,SCODE.DF.
+&        SKIP  2,CLASS.NE.ORDER
+&        SET   U,SCODE=U=G,DISTTYPE=I=G
+&        SKIP  NOS
+&        SKIP  2,CLASS.NE.MODULE
+&        SET   U,SCODE=C=G,DISTTYPE=C=G
+&        SKIP  NOS
+&        SKIP  2,CLASS.NE.MACRO
+&        SET   U,SCODE=C=G,DISTTYPE=I=G
+&        SKIP  NOS
+&        SET   U,SCODE=U=G,DISTTYPE=B=G
+&        ENDSK NOS
+$^
+&        SKIP  2,CLASS.NE.MODULE
+&        SET   U,BLDPROC=XCOMPILE=G
+&  DATAC EXIT  &#NAME
+$^
+&        SKIP  2,BLDPROC.DF.
+&        SET   U,BLDPROC=NONE=G
+&  DATAC EXIT  &#NAME
+$^
