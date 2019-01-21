@@ -8,7 +8,7 @@
 *       ASSIGN USER DATA.                                                       
 *       USES ISPF SERIALIZATION ENQS TO AVOID ALLOCATING DISP=OLD               
 *                                                                               
-*  WRITTEN FOR CLEAR 2.5.0 ON 04/19/93 BY E. K. MCCAULLEY                       
+*  WRITTEN FOR CLEAR 2.5.0 ON 04/19/93 BY E. K. MCCAULLEY.                       
 *                                                                               
 * DISTNAME:   CLRALIAS                                                          
 * ENTRY:      CLRALIAS                                                          
