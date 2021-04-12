@@ -3,7 +3,7 @@
 &VER     SETC  '2.5.0'                                                          
          TITLE 'CLRALIAS - ASSIGN AN ALIAS TO A PDS MEMBER &VER &DATE  *        
                *** IBM INTERNAL USE ONLY ***'                                   
-* 05/01/2011   .                                                                 
+* 05/01/2011                                                                    
 * MODULE TO ASSIGN ALIAS NAMES TO A PDS MEMBER ENTRY AND OPTIONALLY             
 *       ASSIGN USER DATA.                                                       
 *       USES ISPF SERIALIZATION ENQS TO AVOID ALLOCATING DISP=OLD               
